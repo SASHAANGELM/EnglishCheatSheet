@@ -28,3 +28,33 @@ button {
 .transition {
   transition: 0.2s ease-out;
 }
+
+table {
+  width: 100%;
+  padding: 0.25rem;
+  background-color: #EDF2F7;
+  border-radius: 0.5rem;
+
+  tbody {
+    margin: 0.25rem;
+    background-color: white;
+  }
+}
+
+
+.condition {
+  &.rules {
+    padding: 0 0.25rem;
+    border-radius: 0.5rem;
+    color: white;
+    
+    &.if {
+      background-color: rgba(#ed8936, 0.2);
+      color: #ed8936;
+    }
+    &.result {
+      background-color: rgba(#48bb78, 0.2);
+      color: #48bb78;
+    }
+  }
+}
