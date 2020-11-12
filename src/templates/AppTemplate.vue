@@ -36,6 +36,11 @@ export default {
           id: id(),
           label: 'IrregularVerbs',
           to: '/irregular-verbs'
+        },
+        {
+          id: id(),
+          label: 'Exercises',
+          to: '/exercises'
         }
       ]
     };

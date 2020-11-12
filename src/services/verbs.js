@@ -1,9 +1,15 @@
+export function getVerbByFirstForm(firstForm) {
+  return irregularVerbs.find(verb => {
+    return verb.first.toLowerCase() === firstForm.toLowerCase();
+  })
+}
+
 export const irregularVerbs  = JSON.parse(`[
   {
     "first": "abide",
     "second": "abode / abided",
     "third": "abode / abided",
-    "translate": [
+    "translates": [
       "терпеть",
       "выносить",
       "придерживаться чего-либо",
@@ -14,7 +20,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "arise",
     "second": "arose",
     "third": "arisen",
-    "translate": [
+    "translates": [
       "возникать",
       "подниматься"
     ]
@@ -23,7 +29,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "awake",
     "second": "awaked / awoke",
     "third": "awaked / awoken",
-    "translate": [
+    "translates": [
       "будить",
       "вызывать",
       "просыпаться",
@@ -34,7 +40,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "backslide",
     "second": "backslid",
     "third": "backslidden / backslid",
-    "translate": [
+    "translates": [
       "отступаться от веры",
       "снова предаваться пороку"
     ]
@@ -43,7 +49,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "be / was",
     "second": "were",
     "third": "been",
-    "translate": [
+    "translates": [
       "быть",
       "являться"
     ]
@@ -52,7 +58,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "bear",
     "second": "bore / beared",
     "third": "born / borne / beared",
-    "translate": [
+    "translates": [
       "нести",
       "выносить",
       "держать",
@@ -63,7 +69,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "beat",
     "second": "beat",
     "third": "beaten / beat",
-    "translate": [
+    "translates": [
       "бить",
       "побеждать"
     ]
@@ -72,7 +78,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "become",
     "second": "became",
     "third": "become",
-    "translate": [
+    "translates": [
       "становиться",
       "делаться"
     ]
@@ -81,7 +87,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "befall",
     "second": "befell",
     "third": "befallen",
-    "translate": [
+    "translates": [
       "случаться",
       "приключаться"
     ]
@@ -90,7 +96,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "begin",
     "second": "began",
     "third": "begun",
-    "translate": [
+    "translates": [
       "начинать"
     ]
   },
@@ -98,7 +104,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "behold",
     "second": "beheld",
     "third": "beheld",
-    "translate": [
+    "translates": [
       "увидеть",
       "заметить",
       "созерцать",
@@ -109,7 +115,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "bend",
     "second": "bent",
     "third": "bent",
-    "translate": [
+    "translates": [
       "гнуть",
       "сгибать"
     ]
@@ -118,7 +124,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "bereave",
     "second": "bereft / bereaved",
     "third": "bereft / bereaved",
-    "translate": [
+    "translates": [
       "лишать",
       "отнимать",
       "отбирать"
@@ -128,7 +134,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "beseech",
     "second": "besought/beseeched",
     "third": "besought/beseeched",
-    "translate": [
+    "translates": [
       "умолять",
       "просить",
       "упрашивать"
@@ -138,7 +144,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "beset",
     "second": "beset",
     "third": "beset",
-    "translate": [
+    "translates": [
       "окружать",
       "осаждать",
       "преграждать"
@@ -148,7 +154,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "bet",
     "second": "bet / betted",
     "third": "bet / betted",
-    "translate": [
+    "translates": [
       "держать пари",
       "быть уверенным"
     ]
@@ -157,7 +163,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "bid",
     "second": "bid / bade",
     "third": "bidden",
-    "translate": [
+    "translates": [
       "приглашать",
       "приветствовать",
       "прощаться"
@@ -167,7 +173,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "bid",
     "second": "bid",
     "third": "bid",
-    "translate": [
+    "translates": [
       "предлагать цену",
       "велеть",
       "просить"
@@ -177,7 +183,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "bide",
     "second": "bode / bided",
     "third": "bided",
-    "translate": [
+    "translates": [
       "ждать",
       "выжидать",
       "оставаться",
@@ -188,7 +194,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "bind",
     "second": "bound",
     "third": "bound",
-    "translate": [
+    "translates": [
       "связывать"
     ]
   },
@@ -196,7 +202,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "bite",
     "second": "bit",
     "third": "bitten",
-    "translate": [
+    "translates": [
       "кусать",
       "клевать",
       "жалить"
@@ -206,7 +212,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "bleed",
     "second": "bled",
     "third": "bled",
-    "translate": [
+    "translates": [
       "кровоточить",
       "истекать кровью"
     ]
@@ -215,7 +221,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "bless",
     "second": "blessed / blest",
     "third": "blessed / blest",
-    "translate": [
+    "translates": [
       "благословлять",
       "одаривать",
       "перекрестить"
@@ -225,7 +231,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "blow",
     "second": "blew",
     "third": "blown",
-    "translate": [
+    "translates": [
       "дуть",
       "веять",
       "задувать",
@@ -237,7 +243,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "break",
     "second": "broke",
     "third": "broken",
-    "translate": [
+    "translates": [
       "ломать",
       "прерывать",
       "разбивать"
@@ -247,7 +253,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "breed",
     "second": "bred",
     "third": "bred",
-    "translate": [
+    "translates": [
       "выводить",
       "вскармливать",
       "размножаться",
@@ -258,7 +264,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "bring",
     "second": "brought",
     "third": "brought",
-    "translate": [
+    "translates": [
       "приносить",
       "приводить",
       "доводить"
@@ -268,7 +274,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "broadcast",
     "second": "broadcast / broadcasted",
     "third": "broadcast / broadcasted",
-    "translate": [
+    "translates": [
       "вещать",
       "распространять",
       "передавать по радио"
@@ -278,7 +284,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "build",
     "second": "built",
     "third": "built",
-    "translate": [
+    "translates": [
       "строить",
       "сооружать"
     ]
@@ -287,7 +293,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "burn",
     "second": "burned / burnt",
     "third": "burned / burnt",
-    "translate": [
+    "translates": [
       "гореть",
       "сжигать"
     ]
@@ -296,7 +302,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "burst",
     "second": "burst",
     "third": "burst",
-    "translate": [
+    "translates": [
       "лопаться",
       "взрываться",
       "быть переполненным",
@@ -307,7 +313,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "bust",
     "second": "busted / bust",
     "third": "busted / bust",
-    "translate": [
+    "translates": [
       "сломать",
       "разрушать",
       "разориться",
@@ -318,7 +324,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "buy",
     "second": "bought",
     "third": "bought",
-    "translate": [
+    "translates": [
       "покупать"
     ]
   },
@@ -326,7 +332,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "cast",
     "second": "cast",
     "third": "cast",
-    "translate": [
+    "translates": [
       "бросать",
       "отбрасывать",
       "уволить",
@@ -337,7 +343,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "catch",
     "second": "caught",
     "third": "caught",
-    "translate": [
+    "translates": [
       "поймать",
       "ловить",
       "догнать"
@@ -347,7 +353,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "chide",
     "second": "chided / chid",
     "third": "chided / chid / chidden",
-    "translate": [
+    "translates": [
       "распекать",
       "ругать",
       "бранить",
@@ -358,7 +364,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "choose",
     "second": "chose",
     "third": "chosen",
-    "translate": [
+    "translates": [
       "выбирать"
     ]
   },
@@ -366,7 +372,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "cleave",
     "second": "cleft / clove",
     "third": "cleft / cloven",
-    "translate": [
+    "translates": [
       "раскалывать",
       "рассекать"
     ]
@@ -375,7 +381,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "cling",
     "second": "clung",
     "third": "clung",
-    "translate": [
+    "translates": [
       "цепляться",
       "держаться",
       "липнуть"
@@ -385,7 +391,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "clothe",
     "second": "clothed / clad",
     "third": "clothed / clad",
-    "translate": [
+    "translates": [
       "одеть",
       "одевать",
       "выражать",
@@ -396,7 +402,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "come",
     "second": "came",
     "third": "come",
-    "translate": [
+    "translates": [
       "приходить"
     ]
   },
@@ -404,7 +410,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "cost",
     "second": "cost",
     "third": "cost",
-    "translate": [
+    "translates": [
       "оценивать",
       "стоить"
     ]
@@ -413,7 +419,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "creep",
     "second": "crept",
     "third": "crept",
-    "translate": [
+    "translates": [
       "ползать",
       "красться",
       "охватывать",
@@ -424,7 +430,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "crossbreed",
     "second": "crossbred",
     "third": "crossbred",
-    "translate": [
+    "translates": [
       "скрещивать"
     ]
   },
@@ -432,7 +438,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "cut",
     "second": "cut",
     "third": "cut",
-    "translate": [
+    "translates": [
       "резать",
       "обрезать"
     ]
@@ -441,7 +447,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "dare",
     "second": "durst",
     "third": "dared",
-    "translate": [
+    "translates": [
       "сметь",
       "бросать вызов",
       "рисковать"
@@ -451,7 +457,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "daydream",
     "second": "daydreamed / daydreamt",
     "third": "daydreamed / daydreamt",
-    "translate": [
+    "translates": [
       "грезить наяву",
       "мечтать",
       "фантазировать"
@@ -461,7 +467,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "deal",
     "second": "dealt",
     "third": "dealt",
-    "translate": [
+    "translates": [
       "иметь дело",
       "торговать",
       "рассматривать вопрос"
@@ -471,7 +477,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "dig",
     "second": "dug",
     "third": "dug",
-    "translate": [
+    "translates": [
       "копать",
       "рыть",
       "искать"
@@ -481,7 +487,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "disprove",
     "second": "disproved",
     "third": "disproved / disproven",
-    "translate": [
+    "translates": [
       "опровергать",
       "доказывать ложность"
     ]
@@ -490,7 +496,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "dive",
     "second": "dove / dived",
     "third": "dived",
-    "translate": [
+    "translates": [
       "нырять",
       "прыгать вниз",
       "окунаться"
@@ -500,7 +506,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "do",
     "second": "did",
     "third": "done",
-    "translate": [
+    "translates": [
       "делать",
       "выполнять"
     ]
@@ -509,7 +515,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "draw",
     "second": "drew",
     "third": "drawn",
-    "translate": [
+    "translates": [
       "чертить",
       "рисовать",
       "представлять",
@@ -521,7 +527,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "dream",
     "second": "dreamed / dreamt",
     "third": "dreamed / dreamt",
-    "translate": [
+    "translates": [
       "видеть сны",
       "мечтать"
     ]
@@ -530,7 +536,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "drink",
     "second": "drank",
     "third": "drunk",
-    "translate": [
+    "translates": [
       "пить",
       "выпивать"
     ]
@@ -539,7 +545,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "drive",
     "second": "drove",
     "third": "driven",
-    "translate": [
+    "translates": [
       "водить (машину)",
       "управлять",
       "ездить"
@@ -549,7 +555,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "dwell",
     "second": "dwelt / dwelled",
     "third": "dwelt / dwelled",
-    "translate": [
+    "translates": [
       "жить",
       "обитать",
       "пребывать",
@@ -560,7 +566,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "eat",
     "second": "ate",
     "third": "eaten",
-    "translate": [
+    "translates": [
       "есть",
       "принимать пищу",
       "кушать"
@@ -570,7 +576,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "fall",
     "second": "fell",
     "third": "fallen",
-    "translate": [
+    "translates": [
       "падать",
       "опадать",
       "опускаться"
@@ -580,7 +586,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "feed",
     "second": "fed",
     "third": "fed",
-    "translate": [
+    "translates": [
       "кормить"
     ]
   },
@@ -588,7 +594,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "feel",
     "second": "felt",
     "third": "felt",
-    "translate": [
+    "translates": [
       "чувствовать"
     ]
   },
@@ -596,7 +602,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "fight",
     "second": "fought",
     "third": "fought",
-    "translate": [
+    "translates": [
       "бороться",
       "сражаться"
     ]
@@ -605,7 +611,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "find",
     "second": "found",
     "third": "found",
-    "translate": [
+    "translates": [
       "находить",
       "обнаруживать"
     ]
@@ -614,7 +620,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "fit",
     "second": "fitted / fit",
     "third": "fitted / fit",
-    "translate": [
+    "translates": [
       "подгонять",
       "прилаживать",
       "приспосабливать",
@@ -625,7 +631,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "flee",
     "second": "fled",
     "third": "fled",
-    "translate": [
+    "translates": [
       "бежать",
       "спасаться бегством"
     ]
@@ -634,7 +640,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "fling",
     "second": "flung",
     "third": "flung",
-    "translate": [
+    "translates": [
       "кидать",
       "бросать"
     ]
@@ -643,7 +649,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "fly",
     "second": "flew",
     "third": "flown",
-    "translate": [
+    "translates": [
       "летать",
       "пролетать"
     ]
@@ -652,7 +658,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "forbear",
     "second": "forbore",
     "third": "forborne",
-    "translate": [
+    "translates": [
       "сдерживаться",
       "воздерживаться",
       "быть выдержанным"
@@ -662,7 +668,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "forbid",
     "second": "forbade",
     "third": "forbidden",
-    "translate": [
+    "translates": [
       "запрещать"
     ]
   },
@@ -670,7 +676,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "forecast",
     "second": "forecast",
     "third": "forecast",
-    "translate": [
+    "translates": [
       "прогнозировать",
       "предсказывать"
     ]
@@ -679,7 +685,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "forego",
     "second": "forewent",
     "third": "foregone",
-    "translate": [
+    "translates": [
       "предшествовать",
       "идти впереди"
     ]
@@ -688,7 +694,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "foresee",
     "second": "foresaw",
     "third": "foreseen",
-    "translate": [
+    "translates": [
       "предвидеть",
       "предугадывать"
     ]
@@ -697,7 +703,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "foretell",
     "second": "foretold",
     "third": "foretold",
-    "translate": [
+    "translates": [
       "предсказывать",
       "прогнозировать"
     ]
@@ -706,7 +712,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "forget",
     "second": "forgot",
     "third": "forgotten / forgot",
-    "translate": [
+    "translates": [
       "забывать"
     ]
   },
@@ -714,7 +720,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "forgive",
     "second": "forgave",
     "third": "forgiven",
-    "translate": [
+    "translates": [
       "прощать",
       "забыть (долг)"
     ]
@@ -723,7 +729,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "forgo",
     "second": "forwent",
     "third": "forgone",
-    "translate": [
+    "translates": [
       "отказываться",
       "воздерживаться"
     ]
@@ -732,7 +738,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "forsake",
     "second": "forsook",
     "third": "forsaken",
-    "translate": [
+    "translates": [
       "бросать",
       "оставлять",
       "отказываться"
@@ -742,7 +748,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "forswear",
     "second": "forswore",
     "third": "forsworn",
-    "translate": [
+    "translates": [
       "отказываться",
       "отрекаться"
     ]
@@ -751,7 +757,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "freeze",
     "second": "froze",
     "third": "frozen",
-    "translate": [
+    "translates": [
       "замерзать",
       "замораживать"
     ]
@@ -760,7 +766,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "frostbite",
     "second": "frostbit",
     "third": "frostbitten",
-    "translate": [
+    "translates": [
       "обморозить",
       "отморозить"
     ]
@@ -769,7 +775,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "get",
     "second": "got",
     "third": "gotten / got",
-    "translate": [
+    "translates": [
       "получать",
       "становиться"
     ]
@@ -778,7 +784,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "gild",
     "second": "gilded / gilt",
     "third": "gilded / gilt",
-    "translate": [
+    "translates": [
       "золотить",
       "покрывать позолотой",
       "украшать"
@@ -788,7 +794,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "give",
     "second": "gave",
     "third": "given",
-    "translate": [
+    "translates": [
       "давать"
     ]
   },
@@ -796,7 +802,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "go",
     "second": "went",
     "third": "gone",
-    "translate": [
+    "translates": [
       "идти",
       "ехать"
     ]
@@ -805,7 +811,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "grind",
     "second": "ground",
     "third": "ground",
-    "translate": [
+    "translates": [
       "молоть",
       "растереть",
       "шлифовать",
@@ -816,7 +822,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "grow",
     "second": "grew",
     "third": "grown",
-    "translate": [
+    "translates": [
       "расти",
       "выращивать"
     ]
@@ -825,7 +831,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "hand-feed",
     "second": "hand-fed",
     "third": "hand-fed",
-    "translate": [
+    "translates": [
       "подавать вручную"
     ]
   },
@@ -833,7 +839,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "handwrite",
     "second": "handwrote",
     "third": "handwritten",
-    "translate": [
+    "translates": [
       "писать вручную"
     ]
   },
@@ -841,7 +847,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "hang",
     "second": "hung",
     "third": "hung",
-    "translate": [
+    "translates": [
       "висеть",
       "вешать"
     ]
@@ -850,7 +856,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "have",
     "second": "had",
     "third": "had",
-    "translate": [
+    "translates": [
       "иметь",
       "обладать"
     ]
@@ -859,7 +865,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "hear",
     "second": "heard",
     "third": "heard",
-    "translate": [
+    "translates": [
       "слышать",
       "слушать"
     ]
@@ -868,7 +874,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "heave",
     "second": "heaved / hove",
     "third": "heaved / hove",
-    "translate": [
+    "translates": [
       "поднимать",
       "перемещать",
       "вздыматься",
@@ -879,7 +885,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "hew",
     "second": "hewed",
     "third": "hewn / hewed",
-    "translate": [
+    "translates": [
       "рубить",
       "тесать",
       "отбывать",
@@ -890,7 +896,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "hide",
     "second": "hid",
     "third": "hidden",
-    "translate": [
+    "translates": [
       "прятать",
       "прятаться"
     ]
@@ -899,7 +905,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "hit",
     "second": "hit",
     "third": "hit",
-    "translate": [
+    "translates": [
       "ударять",
       "поражать"
     ]
@@ -908,7 +914,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "hold",
     "second": "held",
     "third": "held",
-    "translate": [
+    "translates": [
       "занимать",
       "держать",
       "удерживать"
@@ -918,7 +924,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "hurt",
     "second": "hurt",
     "third": "hurt",
-    "translate": [
+    "translates": [
       "повредить",
       "причинять боль",
       "ранить"
@@ -928,7 +934,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "inbreed",
     "second": "inbred",
     "third": "inbred",
-    "translate": [
+    "translates": [
       "взращивать",
       "воспитывать что-то в ком-то"
     ]
@@ -937,7 +943,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "inlay",
     "second": "inlaid",
     "third": "inlaid",
-    "translate": [
+    "translates": [
       "инкрустировать",
       "делать вставку"
     ]
@@ -946,7 +952,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "input",
     "second": "input / inputted",
     "third": "input / inputted",
-    "translate": [
+    "translates": [
       "ввести",
       "вводить",
       "вкладывать (деньги)"
@@ -956,7 +962,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "interbreed",
     "second": "interbred",
     "third": "interbred",
-    "translate": [
+    "translates": [
       "скрещивать",
       "скрещиваться"
     ]
@@ -965,7 +971,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "interweave",
     "second": "interwove / interweaved",
     "third": "interwoven / interweaved",
-    "translate": [
+    "translates": [
       "c",
       "плетать",
       "переплетать",
@@ -977,7 +983,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "interwind",
     "second": "interwound",
     "third": "interwound",
-    "translate": [
+    "translates": [
       "переплетать",
       "перематывать"
     ]
@@ -986,7 +992,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "jerry-build",
     "second": "jerry-built",
     "third": "jerry-built",
-    "translate": [
+    "translates": [
       "построить на скорую руку",
       "кое-как"
     ]
@@ -995,7 +1001,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "keep",
     "second": "kept",
     "third": "kept",
-    "translate": [
+    "translates": [
       "держать",
       "сохранять",
       "хранить"
@@ -1005,7 +1011,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "kneel",
     "second": "knelt / kneeled",
     "third": "knelt / kneeled",
-    "translate": [
+    "translates": [
       "становиться на колени"
     ]
   },
@@ -1013,7 +1019,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "knit",
     "second": "knitted / knit",
     "third": "knitted / knit",
-    "translate": [
+    "translates": [
       "вязать",
       "штопать"
     ]
@@ -1022,7 +1028,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "know",
     "second": "knew",
     "third": "known",
-    "translate": [
+    "translates": [
       "знать",
       "уметь",
       "быть знакомым"
@@ -1032,7 +1038,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "lay",
     "second": "laid",
     "third": "laid",
-    "translate": [
+    "translates": [
       "класть",
       "валить",
       "накрывать"
@@ -1042,7 +1048,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "lead",
     "second": "led",
     "third": "led",
-    "translate": [
+    "translates": [
       "вести",
       "сопровождать"
     ]
@@ -1051,7 +1057,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "lean",
     "second": "leaned / leant",
     "third": "leaned / leant",
-    "translate": [
+    "translates": [
       "опираться",
       "наклоняться",
       "прислоняться"
@@ -1061,7 +1067,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "leap",
     "second": "leaped / leapt",
     "third": "leaped / leapt",
-    "translate": [
+    "translates": [
       "прыгать",
       "скакать"
     ]
@@ -1070,7 +1076,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "learn",
     "second": "learned / learnt",
     "third": "learned / learnt",
-    "translate": [
+    "translates": [
       "учиться",
       "узнавать"
     ]
@@ -1079,7 +1085,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "leave",
     "second": "left",
     "third": "left",
-    "translate": [
+    "translates": [
       "оставлять",
       "уезжать"
     ]
@@ -1088,7 +1094,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "lend",
     "second": "lent",
     "third": "lent",
-    "translate": [
+    "translates": [
       "одалживать",
       "давать взаймы",
       "занимать"
@@ -1098,7 +1104,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "let",
     "second": "let",
     "third": "let",
-    "translate": [
+    "translates": [
       "позволять",
       "допускать",
       "выпускать",
@@ -1109,7 +1115,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "lie",
     "second": "lay",
     "third": "lain",
-    "translate": [
+    "translates": [
       "лежать",
       "распологаться",
       "находиться"
@@ -1119,7 +1125,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "light",
     "second": "lit / lighted",
     "third": "lit / lighted",
-    "translate": [
+    "translates": [
       "натолкнуться",
       "обрушиться",
       "освещать",
@@ -1131,7 +1137,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "lip-read",
     "second": "lip-read",
     "third": "lip-read",
-    "translate": [
+    "translates": [
       "читать с губ",
       "понимать по губам"
     ]
@@ -1140,7 +1146,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "lose",
     "second": "lost",
     "third": "lost",
-    "translate": [
+    "translates": [
       "терять",
       "утрачивать",
       "избавляться",
@@ -1151,7 +1157,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "make",
     "second": "made",
     "third": "made",
-    "translate": [
+    "translates": [
       "делать",
       "производить",
       "совершать"
@@ -1161,7 +1167,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "mean",
     "second": "meant",
     "third": "meant",
-    "translate": [
+    "translates": [
       "значить",
       "подразумевать"
     ]
@@ -1170,7 +1176,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "meet",
     "second": "met",
     "third": "met",
-    "translate": [
+    "translates": [
       "встречать",
       "знакомиться"
     ]
@@ -1179,7 +1185,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "miscast",
     "second": "miscast",
     "third": "miscast",
-    "translate": [
+    "translates": [
       "неправильно распределять роли"
     ]
   },
@@ -1187,7 +1193,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "misdeal",
     "second": "misdealt",
     "third": "misdealt",
-    "translate": [
+    "translates": [
       "ошибаться при сдаче"
     ]
   },
@@ -1195,7 +1201,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "misdo",
     "second": "misdid",
     "third": "misdone",
-    "translate": [
+    "translates": [
       "делать неправильно",
       "небрежно"
     ]
@@ -1204,7 +1210,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "mishear",
     "second": "misheard",
     "third": "misheard",
-    "translate": [
+    "translates": [
       "ослышаться",
       "не расслышать"
     ]
@@ -1213,7 +1219,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "mislay",
     "second": "mislaid",
     "third": "mislaid",
-    "translate": [
+    "translates": [
       "положить не на место",
       "затерять"
     ]
@@ -1222,7 +1228,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "mislead",
     "second": "misled",
     "third": "misled",
-    "translate": [
+    "translates": [
       "вводить в заблуждение",
       "сбивать с пути"
     ]
@@ -1231,7 +1237,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "mislearn",
     "second": "mislearned / mislearnt",
     "third": "mislearned / mislearnt",
-    "translate": [
+    "translates": [
       "обучаться",
       "учить неправильно"
     ]
@@ -1240,7 +1246,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "misread",
     "second": "misread",
     "third": "misread",
-    "translate": [
+    "translates": [
       "прочитать неправильно",
       "неправильно понять"
     ]
@@ -1249,7 +1255,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "missay",
     "second": "missaid",
     "third": "missaid",
-    "translate": [
+    "translates": [
       "оговориться",
       "сказать неправильно"
     ]
@@ -1258,7 +1264,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "misset",
     "second": "misset",
     "third": "misset",
-    "translate": [
+    "translates": [
       "неправильно установить"
     ]
   },
@@ -1266,7 +1272,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "misspeak",
     "second": "misspoke",
     "third": "misspoken",
-    "translate": [
+    "translates": [
       "говорить",
       "произносить неправильно"
     ]
@@ -1275,7 +1281,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "misspell",
     "second": "misspelled / misspelt",
     "third": "misspelled / misspelt",
-    "translate": [
+    "translates": [
       "писать с ошибками",
       "делать орфографические ошибки"
     ]
@@ -1284,7 +1290,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "misspend",
     "second": "misspent",
     "third": "misspent",
-    "translate": [
+    "translates": [
       "неразумно тратить",
       "транжирить"
     ]
@@ -1293,7 +1299,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "misswear",
     "second": "misswore",
     "third": "missworn",
-    "translate": [
+    "translates": [
       "давать ложную клятву"
     ]
   },
@@ -1301,7 +1307,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "mistake",
     "second": "mistook",
     "third": "mistaken",
-    "translate": [
+    "translates": [
       "ошибаться",
       "заблуждаться"
     ]
@@ -1310,7 +1316,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "misteach",
     "second": "mistaught",
     "third": "mistaught",
-    "translate": [
+    "translates": [
       "неправильно обучать"
     ]
   },
@@ -1318,7 +1324,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "misunderstand",
     "second": "misunderstood",
     "third": "misunderstood",
-    "translate": [
+    "translates": [
       "не понимать",
       "понять неправильно"
     ]
@@ -1327,7 +1333,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "miswrite",
     "second": "miswrote",
     "third": "miswritten",
-    "translate": [
+    "translates": [
       "неправильно писать"
     ]
   },
@@ -1335,7 +1341,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "mow",
     "second": "mowed",
     "third": "mowed / mown",
-    "translate": [
+    "translates": [
       "косить",
       "стричь (газон)",
       "жать"
@@ -1345,7 +1351,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "offset",
     "second": "offset",
     "third": "offset",
-    "translate": [
+    "translates": [
       "возмещать",
       "компенсировать",
       "ответвляться"
@@ -1355,7 +1361,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outbid",
     "second": "outbid",
     "third": "outbid",
-    "translate": [
+    "translates": [
       "перебивать цену",
       "превзойти",
       "затмить"
@@ -1365,7 +1371,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outdo",
     "second": "outdid",
     "third": "outdone",
-    "translate": [
+    "translates": [
       "превзойти",
       "поражать",
       "побороть"
@@ -1375,7 +1381,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outdraw",
     "second": "outdrew",
     "third": "outdrawn",
-    "translate": [
+    "translates": [
       "добиться большей популярности",
       "превзойти конкурентов"
     ]
@@ -1384,7 +1390,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outdrink",
     "second": "outdrank",
     "third": "outdrunk",
-    "translate": [
+    "translates": [
       "перепить (кого-то)",
       "выпить больше",
       "чем кто-то"
@@ -1394,7 +1400,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outdrive",
     "second": "outdrove",
     "third": "outdriven",
-    "translate": [
+    "translates": [
       "обогнать",
       "опередить"
     ]
@@ -1403,7 +1409,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outfight",
     "second": "outfought",
     "third": "outfought",
-    "translate": [
+    "translates": [
       "иметь перевес над противником",
       "побеждать"
     ]
@@ -1412,7 +1418,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outfly",
     "second": "outflew",
     "third": "outflown",
-    "translate": [
+    "translates": [
       "вылетать",
       "летать быстрее",
       "дальше (чем кто-либо)"
@@ -1422,7 +1428,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outgrow",
     "second": "outgrew",
     "third": "outgrown",
-    "translate": [
+    "translates": [
       "опережать в росте",
       "перерастать",
       "избавляться с возрастом"
@@ -1432,7 +1438,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outleap",
     "second": "outleaped / outleapt",
     "third": "outleaped / outleapt",
-    "translate": [
+    "translates": [
       "перепрыгивать",
       "выпрыгивать",
       "прыгать лучше"
@@ -1442,7 +1448,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outlie",
     "second": "outlay",
     "third": "outlain",
-    "translate": [
+    "translates": [
       "находиться снаружи",
       "вне",
       "простираться"
@@ -1452,7 +1458,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outrun",
     "second": "outran",
     "third": "outrun",
-    "translate": [
+    "translates": [
       "перегонять",
       "опережать",
       "убежать",
@@ -1463,7 +1469,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outsell",
     "second": "outsold",
     "third": "outsold",
-    "translate": [
+    "translates": [
       "продавать",
       "продаваться лучше",
       "превосходить в цене"
@@ -1473,7 +1479,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outshine",
     "second": "outshined / outshone",
     "third": "outshined / outshone",
-    "translate": [
+    "translates": [
       "затмить"
     ]
   },
@@ -1481,7 +1487,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outshoot",
     "second": "outshot",
     "third": "outshot",
-    "translate": [
+    "translates": [
       "стрелять лучше",
       "отбрасывать",
       "выбрасывать"
@@ -1491,7 +1497,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outsing",
     "second": "outsang",
     "third": "outsung",
-    "translate": [
+    "translates": [
       "превзойти в пении"
     ]
   },
@@ -1499,7 +1505,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outsit",
     "second": "outsat",
     "third": "outsat",
-    "translate": [
+    "translates": [
       "пересидеть",
       "засидеться"
     ]
@@ -1508,7 +1514,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outsleep",
     "second": "outslept",
     "third": "outslept",
-    "translate": [
+    "translates": [
       "проспать",
       "прозевать"
     ]
@@ -1517,7 +1523,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outsmell",
     "second": "outsmelled / outsmelt",
     "third": "outsmelled / outsmelt",
-    "translate": [
+    "translates": [
       "пахнуть сильнее",
       "чем что-то"
     ]
@@ -1526,7 +1532,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outspeak",
     "second": "outspoke",
     "third": "outspoken",
-    "translate": [
+    "translates": [
       "говорить лучше",
       "высказаться",
       "заявить"
@@ -1536,7 +1542,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outspeed",
     "second": "outsped / outspeeded",
     "third": "outsped / outspeeded",
-    "translate": [
+    "translates": [
       "перегонять",
       "быть",
       "действовать быстрее"
@@ -1546,7 +1552,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outspend",
     "second": "outspent",
     "third": "outspent",
-    "translate": [
+    "translates": [
       "превзойти по расходам",
       "тратить больше"
     ]
@@ -1555,7 +1561,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outstand",
     "second": "outstood",
     "third": "outstood",
-    "translate": [
+    "translates": [
       "выделяться",
       "бросаться в глаза",
       "выдержать"
@@ -1565,7 +1571,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outswear",
     "second": "outswore",
     "third": "outsworn",
-    "translate": [
+    "translates": [
       "превосходить в ругани"
     ]
   },
@@ -1573,7 +1579,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outswim",
     "second": "outswam",
     "third": "outswum",
-    "translate": [
+    "translates": [
       "превосходить в плавании"
     ]
   },
@@ -1581,7 +1587,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outthink",
     "second": "outthought",
     "third": "outthought",
-    "translate": [
+    "translates": [
       "превосходить разумом",
       "перехитрить"
     ]
@@ -1590,7 +1596,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outthrow",
     "second": "outthrew",
     "third": "outthrown",
-    "translate": [
+    "translates": [
       "выбрасывать",
       "извергать",
       "бросать лучше"
@@ -1600,7 +1606,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outwear",
     "second": "outwore",
     "third": "worn",
-    "translate": [
+    "translates": [
       "изнашивать",
       "служить дольше остальных вещей"
     ]
@@ -1609,7 +1615,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "outwrite",
     "second": "outwrote",
     "third": "outwritten",
-    "translate": [
+    "translates": [
       "писать лучше"
     ]
   },
@@ -1617,7 +1623,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overbid",
     "second": "overbid",
     "third": "overbid",
-    "translate": [
+    "translates": [
       "перебивать цену",
       "взятку"
     ]
@@ -1626,7 +1632,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overbreed",
     "second": "overbred",
     "third": "overbred",
-    "translate": [
+    "translates": [
       "разводить",
       "выращивать животных в чрезмерном количестве"
     ]
@@ -1635,7 +1641,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overbuild",
     "second": "overbuilt",
     "third": "overbuilt",
-    "translate": [
+    "translates": [
       "чрезмерно застраивать",
       "надстраивать"
     ]
@@ -1644,7 +1650,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overbuy",
     "second": "overbought",
     "third": "overbought",
-    "translate": [
+    "translates": [
       "покупать слишком много",
       "слишком дорого"
     ]
@@ -1653,7 +1659,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overcome",
     "second": "overcame",
     "third": "overcome",
-    "translate": [
+    "translates": [
       "преодолеть",
       "побороть"
     ]
@@ -1662,7 +1668,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overdo",
     "second": "overdid",
     "third": "overdone",
-    "translate": [
+    "translates": [
       "перестараться",
       "переборщить",
       "утрировать",
@@ -1673,7 +1679,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overdraw",
     "second": "overdrew",
     "third": "overdrawn",
-    "translate": [
+    "translates": [
       "превысить кредит",
       "гиперболизировать"
     ]
@@ -1682,7 +1688,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overdrink",
     "second": "overdrank",
     "third": "overdrunk",
-    "translate": [
+    "translates": [
       "перепить",
       "слишком много пить"
     ]
@@ -1691,7 +1697,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overeat",
     "second": "overate",
     "third": "overeaten",
-    "translate": [
+    "translates": [
       "переесть",
       "есть слишком много"
     ]
@@ -1700,7 +1706,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overfeed",
     "second": "overfed",
     "third": "overfed",
-    "translate": [
+    "translates": [
       "перекармливать",
       "объедаться"
     ]
@@ -1709,7 +1715,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overfly",
     "second": "overflew",
     "third": "overflown",
-    "translate": [
+    "translates": [
       "перелетать",
       "пролетать над чем-то"
     ]
@@ -1718,7 +1724,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overhang",
     "second": "overhung",
     "third": "overhung",
-    "translate": [
+    "translates": [
       "выступать",
       "нависать",
       "угрожать",
@@ -1729,7 +1735,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overhear",
     "second": "overheard",
     "third": "overheard",
-    "translate": [
+    "translates": [
       "подслушивать",
       "нечаянно услышать"
     ]
@@ -1738,7 +1744,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overlay",
     "second": "overlaid",
     "third": "overlaid",
-    "translate": [
+    "translates": [
       "покрывать",
       "перекрывать",
       "оказывать влияние"
@@ -1748,7 +1754,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overlie",
     "second": "overlay",
     "third": "overlain",
-    "translate": [
+    "translates": [
       "лежать",
       "залегать над чем-то",
       "перекрывать "
@@ -1758,7 +1764,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overpay",
     "second": "overpaid",
     "third": "overpaid",
-    "translate": [
+    "translates": [
       "переплачивать",
       "возмещать с избытком"
     ]
@@ -1767,7 +1773,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "override",
     "second": "overrode",
     "third": "overridden",
-    "translate": [
+    "translates": [
       "отменять",
       "перевешивать",
       "преобладать",
@@ -1778,7 +1784,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overrun",
     "second": "overran",
     "third": "overrun",
-    "translate": [
+    "translates": [
       "переходить пределы",
       "захватывать",
       "заполонять"
@@ -1788,7 +1794,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "oversee",
     "second": "oversaw",
     "third": "overseen",
-    "translate": [
+    "translates": [
       "наблюдать",
       "надзирать",
       "следить",
@@ -1799,7 +1805,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "oversell",
     "second": "oversold",
     "third": "oversold",
-    "translate": [
+    "translates": [
       "перехваливать",
       "навязывать продукцию",
       "продать больше своих запасов"
@@ -1809,7 +1815,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overset",
     "second": "overset",
     "third": "overset",
-    "translate": [
+    "translates": [
       "нарушать порядок",
       "расстраивать",
       "опрокидываться"
@@ -1819,7 +1825,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "oversew",
     "second": "oversewed",
     "third": "oversewn / oversewed",
-    "translate": [
+    "translates": [
       "сшивать через край"
     ]
   },
@@ -1827,7 +1833,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overshoot",
     "second": "overshot",
     "third": "overshot",
-    "translate": [
+    "translates": [
       "промахнуться",
       "перейти границы",
       "стрелять до изнеможения"
@@ -1837,7 +1843,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "oversleep",
     "second": "overslept",
     "third": "overslept",
-    "translate": [
+    "translates": [
       "проспать",
       "заспаться"
     ]
@@ -1846,7 +1852,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overspeak",
     "second": "overspoke",
     "third": "overspoken",
-    "translate": [
+    "translates": [
       "слишком много разговаривать"
     ]
   },
@@ -1854,7 +1860,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overspend",
     "second": "overspent",
     "third": "overspent",
-    "translate": [
+    "translates": [
       "сорить деньгами",
       "расстраивать свое здоровье"
     ]
@@ -1863,7 +1869,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overspill",
     "second": "overspilled / overspilt",
     "third": "overspilled / overspilt",
-    "translate": [
+    "translates": [
       "проливать",
       "переполнять",
       "перенаселять"
@@ -1873,7 +1879,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overtake",
     "second": "overtook",
     "third": "overtaken",
-    "translate": [
+    "translates": [
       "догнать",
       "настигать",
       "овладевать",
@@ -1884,7 +1890,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overthink",
     "second": "overthought",
     "third": "overthought",
-    "translate": [
+    "translates": [
       "надумать лишнего",
       "слишком много думать"
     ]
@@ -1893,7 +1899,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overthrow",
     "second": "overthrew",
     "third": "overthrown",
-    "translate": [
+    "translates": [
       "бросать слишком далеко",
       "свергать",
       "разрушать"
@@ -1903,7 +1909,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overwind",
     "second": "overwound",
     "third": "overwound",
-    "translate": [
+    "translates": [
       "перекрутить",
       "крутить слишком сильно",
       "быстро"
@@ -1913,7 +1919,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "overwrite",
     "second": "overwrote",
     "third": "overwritten",
-    "translate": [
+    "translates": [
       "переписывать",
       "писать поверх текста",
       "много писать"
@@ -1923,7 +1929,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "partake",
     "second": "partook",
     "third": "partaken",
-    "translate": [
+    "translates": [
       "принимать участие",
       "разделять",
       "отведать",
@@ -1934,7 +1940,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "pay",
     "second": "paid",
     "third": "paid",
-    "translate": [
+    "translates": [
       "платить",
       "вознаграждать",
       "отомстить"
@@ -1944,7 +1950,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "plead",
     "second": "pleaded / pled",
     "third": "pleaded / pled",
-    "translate": [
+    "translates": [
       "защищать подсудимого",
       "ходатайствовать",
       "простить"
@@ -1954,7 +1960,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "prebuild",
     "second": "prebuilt",
     "third": "prebuilt",
-    "translate": [
+    "translates": [
       "предварительно собрать",
       "выстроить"
     ]
@@ -1963,7 +1969,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "predo",
     "second": "predid",
     "third": "predone",
-    "translate": [
+    "translates": [
       "сделать заранее",
       "подготовить"
     ]
@@ -1972,7 +1978,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "premake",
     "second": "premade",
     "third": "premade",
-    "translate": [
+    "translates": [
       "подготовить",
       "сделать наперед",
       "заранее"
@@ -1982,7 +1988,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "prepay",
     "second": "prepaid",
     "third": "prepaid",
-    "translate": [
+    "translates": [
       "предоплачивать",
       "платить наперед"
     ]
@@ -1991,7 +1997,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "presell",
     "second": "presoldpreset",
     "third": "prespresetold",
-    "translate": [
+    "translates": [
       "рекламировать товар",
       "организовать предпродажу",
       "продавать наперед"
@@ -2001,7 +2007,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "preshrink",
     "second": "preshrank",
     "third": "preshrunk",
-    "translate": [
+    "translates": [
       "обрабатывать ткань для предотвращения ее стяжки"
     ]
   },
@@ -2009,7 +2015,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "proofread",
     "second": "proofread",
     "third": "proofread",
-    "translate": [
+    "translates": [
       "читать корректуру",
       "корректировать",
       "вычитывать"
@@ -2019,7 +2025,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "prove",
     "second": "proved",
     "third": "proven / proved",
-    "translate": [
+    "translates": [
       "доказывать",
       "удостоверять"
     ]
@@ -2028,7 +2034,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "put",
     "second": "put",
     "third": "put",
-    "translate": [
+    "translates": [
       "класть",
       "положить"
     ]
@@ -2037,7 +2043,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "quick-freeze",
     "second": "quick-froze",
     "third": "quick-frozen",
-    "translate": [
+    "translates": [
       "быстро замораживать",
       "замерзать"
     ]
@@ -2046,7 +2052,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "quit",
     "second": "quit / quitted",
     "third": "quit / quitted",
-    "translate": [
+    "translates": [
       "оставлять",
       "покидать",
       "выходить"
@@ -2056,7 +2062,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "read",
     "second": "read",
     "third": "read",
-    "translate": [
+    "translates": [
       "читать"
     ]
   },
@@ -2064,7 +2070,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "reawake",
     "second": "reawoke",
     "third": "reawaken",
-    "translate": [
+    "translates": [
       "снова пробуждать"
     ]
   },
@@ -2072,7 +2078,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "rebid",
     "second": "rebid",
     "third": "rebid",
-    "translate": [
+    "translates": [
       "делать повторную ставку"
     ]
   },
@@ -2080,7 +2086,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "rebind",
     "second": "rebound",
     "third": "rebound",
-    "translate": [
+    "translates": [
       "переплетать заново (книгу)"
     ]
   },
@@ -2088,7 +2094,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "rebroadcast",
     "second": "rebroadcast / rebroadcasted",
     "third": "rebroadcast / rebroadcasted",
-    "translate": [
+    "translates": [
       "ретранслировать",
       "показывать (передачу) заново"
     ]
@@ -2097,7 +2103,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "rebuild",
     "second": "rebuilt",
     "third": "rebuilt",
-    "translate": [
+    "translates": [
       "перестраивать"
     ]
   },
@@ -2105,7 +2111,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "recast",
     "second": "recast",
     "third": "recast",
-    "translate": [
+    "translates": [
       "переделывать",
       "изменять",
       "пересчитывать"
@@ -2115,7 +2121,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "recut",
     "second": "recut",
     "third": "recut",
-    "translate": [
+    "translates": [
       "вторично нарезать",
       "повторно вырезать (сцены из фильма)"
     ]
@@ -2124,7 +2130,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "redeal",
     "second": "redealt",
     "third": "redealt",
-    "translate": [
+    "translates": [
       "перераздавать карты в игре"
     ]
   },
@@ -2132,7 +2138,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "redo",
     "second": "redid",
     "third": "redone",
-    "translate": [
+    "translates": [
       "переделывать",
       "делать ремонт"
     ]
@@ -2141,7 +2147,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "redraw",
     "second": "redrew",
     "third": "redrawn",
-    "translate": [
+    "translates": [
       "перерисовывать",
       "обновлять рисунок",
       "выставлять обратный вексель"
@@ -2151,7 +2157,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "refit",
     "second": "refitted / refit",
     "third": "refitted / refit",
-    "translate": [
+    "translates": [
       "перекраивать",
       "подгонять заново (по размеру)"
     ]
@@ -2160,7 +2166,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "regrind",
     "second": "reground",
     "third": "reground",
-    "translate": [
+    "translates": [
       "перешлифовывать",
       "перетачивать",
       "притирать"
@@ -2170,7 +2176,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "regrow",
     "second": "regrew",
     "third": "regrown",
-    "translate": [
+    "translates": [
       "отрастать снова"
     ]
   },
@@ -2178,7 +2184,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "rehang",
     "second": "rehung",
     "third": "rehung",
-    "translate": [
+    "translates": [
       "перевешивать"
     ]
   },
@@ -2186,7 +2192,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "rehear",
     "second": "reheard",
     "third": "reheard",
-    "translate": [
+    "translates": [
       "услышать снова",
       "рассматривать дело повторно"
     ]
@@ -2195,7 +2201,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "reknit",
     "second": "reknitted / reknit",
     "third": "reknitted / reknit",
-    "translate": [
+    "translates": [
       "вязать заново",
       "соединять заново"
     ]
@@ -2204,7 +2210,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "relay",
     "second": "relaid",
     "third": "relaid",
-    "translate": [
+    "translates": [
       "класть заново",
       "заменять (черепицу",
       "кафель)"
@@ -2214,7 +2220,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "relearn",
     "second": "relearned / relearnt",
     "third": "relearned / relearnt",
-    "translate": [
+    "translates": [
       "учиться заново",
       "переучиваться"
     ]
@@ -2223,7 +2229,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "relight",
     "second": "relit / relighted",
     "third": "relit / relighted",
-    "translate": [
+    "translates": [
       "зажечь",
       "зажечься снова",
       "загореться"
@@ -2233,7 +2239,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "remake",
     "second": "remade",
     "third": "remade",
-    "translate": [
+    "translates": [
       "переделывать",
       "делать заново"
     ]
@@ -2242,7 +2248,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "rend",
     "second": "rent / rended",
     "third": "rent / rended",
-    "translate": [
+    "translates": [
       "отрывать",
       "раздирать",
       "дробить",
@@ -2253,7 +2259,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "repay",
     "second": "repaid",
     "third": "repaid",
-    "translate": [
+    "translates": [
       "отдавать",
       "возвращать",
       "возмещать",
@@ -2264,7 +2270,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "reread",
     "second": "reread",
     "third": "reread",
-    "translate": [
+    "translates": [
       "перечитывать"
     ]
   },
@@ -2272,7 +2278,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "rerun",
     "second": "reran",
     "third": "rerun",
-    "translate": [
+    "translates": [
       "перезапускать",
       "повторно проводить",
       "показывать"
@@ -2282,7 +2288,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "resell",
     "second": "resold",
     "third": "resold",
-    "translate": [
+    "translates": [
       "перепродавать"
     ]
   },
@@ -2290,7 +2296,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "resend",
     "second": "resent",
     "third": "resent",
-    "translate": [
+    "translates": [
       "переотправлять",
       "посылать заново"
     ]
@@ -2299,7 +2305,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "reset",
     "second": "reset",
     "third": "reset",
-    "translate": [
+    "translates": [
       "повторно включать",
       "устанавливать",
       "сбрасывать"
@@ -2309,7 +2315,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "resew",
     "second": "resewed",
     "third": "resewn / resewed",
-    "translate": [
+    "translates": [
       "пришивать заново",
       "перешивать"
     ]
@@ -2318,7 +2324,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "retake",
     "second": "retook",
     "third": "retaken",
-    "translate": [
+    "translates": [
       "снова взять",
       "переснимать",
       "пересдавать (экзамен)"
@@ -2328,7 +2334,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "reteach",
     "second": "retaught",
     "third": "retaught",
-    "translate": [
+    "translates": [
       "переучивать",
       "учить заново"
     ]
@@ -2337,7 +2343,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "retear",
     "second": "retore",
     "third": "retorn",
-    "translate": [
+    "translates": [
       "снова разрывать",
       "отрывать"
     ]
@@ -2346,7 +2352,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "retell",
     "second": "retold",
     "third": "retold",
-    "translate": [
+    "translates": [
       "пересказывать",
       "рассказывать снова"
     ]
@@ -2355,7 +2361,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "rethink",
     "second": "rethought",
     "third": "rethought",
-    "translate": [
+    "translates": [
       "пересматривать",
       "заново осмыслить"
     ]
@@ -2364,7 +2370,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "retread",
     "second": "retread",
     "third": "retread",
-    "translate": [
+    "translates": [
       "сменить покрышку",
       "переобучать",
       "заново давать работу"
@@ -2374,7 +2380,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "retrofit",
     "second": "retrofitted / retrofit",
     "third": "retrofitted / retrofit",
-    "translate": [
+    "translates": [
       "модифицировать",
       "подгонять",
       "настраивать"
@@ -2384,7 +2390,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "rewake",
     "second": "rewoke / rewaked",
     "third": "rewaken / rewaked",
-    "translate": [
+    "translates": [
       "будить",
       "пробуждаться заново"
     ]
@@ -2393,7 +2399,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "rewear",
     "second": "rewore",
     "third": "reworn",
-    "translate": [
+    "translates": [
       "носить заново"
     ]
   },
@@ -2401,7 +2407,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "reweave",
     "second": "rewove / reweaved",
     "third": "rewoven / reweaved",
-    "translate": [
+    "translates": [
       "переткать",
       "плести",
       "ткать заново",
@@ -2412,7 +2418,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "rewed",
     "second": "rewed / rewedded",
     "third": "rewed / rewedded",
-    "translate": [
+    "translates": [
       "жениться во второй раз"
     ]
   },
@@ -2420,7 +2426,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "rewet",
     "second": "rewet / rewetted",
     "third": "rewet / rewetted",
-    "translate": [
+    "translates": [
       "повторно увлажнять",
       "мочить снова"
     ]
@@ -2429,7 +2435,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "rewin",
     "second": "rewon",
     "third": "rewon",
-    "translate": [
+    "translates": [
       "снова победить",
       "победить после проигрыша"
     ]
@@ -2438,7 +2444,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "rewind",
     "second": "rewound",
     "third": "rewound",
-    "translate": [
+    "translates": [
       "перематывать (назад)"
     ]
   },
@@ -2446,7 +2452,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "rewrite",
     "second": "rewrote",
     "third": "rewritten",
-    "translate": [
+    "translates": [
       "переписывать",
       "редактировать",
       "отвечать письменно"
@@ -2456,7 +2462,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "rid",
     "second": "rid",
     "third": "rid",
-    "translate": [
+    "translates": [
       "освобождать",
       "избавлять"
     ]
@@ -2465,7 +2471,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "ride",
     "second": "rode",
     "third": "ridden",
-    "translate": [
+    "translates": [
       "ехать верхом",
       "кататься",
       "ехать (в транспорте)"
@@ -2475,7 +2481,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "ring",
     "second": "rang",
     "third": "rung",
-    "translate": [
+    "translates": [
       "звонить",
       "звенеть"
     ]
@@ -2484,7 +2490,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "rise",
     "second": "rose",
     "third": "risen",
-    "translate": [
+    "translates": [
       "подниматься",
       "восходить"
     ]
@@ -2493,7 +2499,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "roughcast",
     "second": "roughcast",
     "third": "roughcast",
-    "translate": [
+    "translates": [
       "набрасывать план",
       "намечать",
       "грубо штукатурить"
@@ -2503,7 +2509,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "run",
     "second": "ran",
     "third": "run",
-    "translate": [
+    "translates": [
       "бежать",
       "гнать",
       "управлять",
@@ -2514,7 +2520,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "sand-cast",
     "second": "sand-cast",
     "third": "sand-cast",
-    "translate": [
+    "translates": [
       "отливать металл в песчаную форму"
     ]
   },
@@ -2522,7 +2528,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "saw",
     "second": "sawed",
     "third": "sawed / sawn",
-    "translate": [
+    "translates": [
       "пилить",
       "распилить"
     ]
@@ -2531,7 +2537,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "say",
     "second": "said",
     "third": "said",
-    "translate": [
+    "translates": [
       "говорить",
       "сказать"
     ]
@@ -2540,7 +2546,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "see",
     "second": "saw",
     "third": "seen",
-    "translate": [
+    "translates": [
       "видеть",
       "смотреть"
     ]
@@ -2549,7 +2555,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "seek",
     "second": "sought",
     "third": "sought",
-    "translate": [
+    "translates": [
       "искать",
       "добиваться"
     ]
@@ -2558,7 +2564,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "sell",
     "second": "sold",
     "third": "sold",
-    "translate": [
+    "translates": [
       "продавать"
     ]
   },
@@ -2566,7 +2572,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "send",
     "second": "sent",
     "third": "sent",
-    "translate": [
+    "translates": [
       "посылать",
       "отправлять"
     ]
@@ -2575,7 +2581,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "set",
     "second": "set",
     "third": "set",
-    "translate": [
+    "translates": [
       "помещать",
       "ставить"
     ]
@@ -2584,7 +2590,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "sew",
     "second": "sewed",
     "third": "sewn / sewed",
-    "translate": [
+    "translates": [
       "шить",
       "штопать"
     ]
@@ -2593,7 +2599,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "shake",
     "second": "shook",
     "third": "shaken",
-    "translate": [
+    "translates": [
       "трясти",
       "встряхивать"
     ]
@@ -2602,7 +2608,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "shave",
     "second": "shaved",
     "third": "shaved / shaven",
-    "translate": [
+    "translates": [
       "бриться"
     ]
   },
@@ -2610,7 +2616,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "shear",
     "second": "sheared",
     "third": "sheared / shorn",
-    "translate": [
+    "translates": [
       "резать",
       "выстригать",
       "рассекать"
@@ -2620,7 +2626,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "shed",
     "second": "shed",
     "third": "shed",
-    "translate": [
+    "translates": [
       "проливать",
       "терять",
       "сбрасывать"
@@ -2630,7 +2636,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "shine",
     "second": "shined / shone",
     "third": "shined / shone",
-    "translate": [
+    "translates": [
       "сиять",
       "светить"
     ]
@@ -2639,7 +2645,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "shit",
     "second": "shit / shat / shitted",
     "third": "shit/ shat / shitted",
-    "translate": [
+    "translates": [
       "какать",
       "гадить",
       "срать"
@@ -2649,7 +2655,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "shoe",
     "second": "shod",
     "third": "shod",
-    "translate": [
+    "translates": [
       "обувать",
       "подковывать",
       "подбивать"
@@ -2659,7 +2665,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "shoot",
     "second": "shot",
     "third": "shot",
-    "translate": [
+    "translates": [
       "стрелять",
       "охотиться"
     ]
@@ -2668,7 +2674,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "show",
     "second": "showed",
     "third": "shown / showed",
-    "translate": [
+    "translates": [
       "показывать",
       "показываться",
       "выставлять напоказ"
@@ -2678,7 +2684,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "shrink",
     "second": "shrank / shrunk",
     "third": "shrunk / shrunken",
-    "translate": [
+    "translates": [
       "уменьшать",
       "уменьшаться",
       "сжиматься",
@@ -2689,7 +2695,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "shut",
     "second": "shut",
     "third": "shut",
-    "translate": [
+    "translates": [
       "закрывать"
     ]
   },
@@ -2697,7 +2703,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "sight-read",
     "second": "sight-read",
     "third": "sight-read",
-    "translate": [
+    "translates": [
       "играть",
       "петь с листа",
       "читать ноты",
@@ -2708,7 +2714,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "sing",
     "second": "sang",
     "third": "sung",
-    "translate": [
+    "translates": [
       "петь"
     ]
   },
@@ -2716,7 +2722,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "sink",
     "second": "sank / sunk",
     "third": "sunk",
-    "translate": [
+    "translates": [
       "тонуть",
       "опускаться",
       "погружаться"
@@ -2726,7 +2732,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "sit",
     "second": "sat",
     "third": "sat",
-    "translate": [
+    "translates": [
       "сидеть",
       "сажать",
       "находиться"
@@ -2736,7 +2742,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "slay",
     "second": "slew / slayed",
     "third": "slain / slayed",
-    "translate": [
+    "translates": [
       "убивать",
       "уничтожать"
     ]
@@ -2745,7 +2751,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "sleep",
     "second": "slept",
     "third": "slept",
-    "translate": [
+    "translates": [
       "спать"
     ]
   },
@@ -2753,7 +2759,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "slide",
     "second": "slid",
     "third": "slid",
-    "translate": [
+    "translates": [
       "скользить",
       "ползать",
       "кататься"
@@ -2763,7 +2769,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "sling",
     "second": "slung",
     "third": "slung",
-    "translate": [
+    "translates": [
       "швырять",
       "вешать через плечо",
       "подвешивать"
@@ -2773,7 +2779,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "slink",
     "second": "slinked / slunk",
     "third": "slinked / slunk",
-    "translate": [
+    "translates": [
       "красться",
       "подкрадываться",
       "рожать преждевременно"
@@ -2783,7 +2789,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "slit",
     "second": "slit",
     "third": "slit",
-    "translate": [
+    "translates": [
       "разрезать",
       "перерезать"
     ]
@@ -2792,7 +2798,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "smell",
     "second": "smelled / smelt",
     "third": "smelled / smelt",
-    "translate": [
+    "translates": [
       "пахнуть",
       "нюхать"
     ]
@@ -2801,7 +2807,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "smite",
     "second": "smote",
     "third": "smitten",
-    "translate": [
+    "translates": [
       "поражать",
       "бить",
       "наказывать"
@@ -2811,7 +2817,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "sneak",
     "second": "sneaked / snuck",
     "third": "sneaked / snuck",
-    "translate": [
+    "translates": [
       "красться",
       "подкрадываться",
       "красть",
@@ -2822,7 +2828,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "sow",
     "second": "sowed",
     "third": "sown / sowed",
-    "translate": [
+    "translates": [
       "сеять",
       "засевать",
       "распространять"
@@ -2832,7 +2838,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "speak",
     "second": "spoke",
     "third": "spoken",
-    "translate": [
+    "translates": [
       "говорить"
     ]
   },
@@ -2840,7 +2846,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "speed",
     "second": "sped / speeded",
     "third": "sped / speeded",
-    "translate": [
+    "translates": [
       "спешить",
       "ускорять",
       "торопить"
@@ -2850,7 +2856,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "spell",
     "second": "spelled / spelt",
     "third": "spelled / spelt",
-    "translate": [
+    "translates": [
       "заколдовать",
       "сменить",
       "дать отдохнуть",
@@ -2862,7 +2868,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "spend",
     "second": "spent",
     "third": "spent",
-    "translate": [
+    "translates": [
       "тратить",
       "истощать"
     ]
@@ -2871,7 +2877,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "spill",
     "second": "spilled / spilt",
     "third": "spilled / spilt",
-    "translate": [
+    "translates": [
       "проливать",
       "разливаться"
     ]
@@ -2880,7 +2886,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "spin",
     "second": "spun",
     "third": "spun",
-    "translate": [
+    "translates": [
       "прясть",
       "крутить",
       "вертеть",
@@ -2891,7 +2897,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "spit",
     "second": "spit / spat",
     "third": "spit / spat",
-    "translate": [
+    "translates": [
       "плевать",
       "пронзать",
       "натыкать",
@@ -2902,7 +2908,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "spoil",
     "second": "spoiled / spoilt",
     "third": "spoiled / spoilt",
-    "translate": [
+    "translates": [
       "портить",
       "баловать"
     ]
@@ -2911,7 +2917,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "spread",
     "second": "spread",
     "third": "spread",
-    "translate": [
+    "translates": [
       "распространяться",
       "расстилать"
     ]
@@ -2920,7 +2926,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "spring",
     "second": "sprang / sprung",
     "third": "sprung",
-    "translate": [
+    "translates": [
       "прыгать",
       "вскочить"
     ]
@@ -2929,7 +2935,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "stand",
     "second": "stood",
     "third": "stood",
-    "translate": [
+    "translates": [
       "стоять",
       "быть расположенным"
     ]
@@ -2938,7 +2944,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "stave",
     "second": "staved / stove",
     "third": "staved / stove",
-    "translate": [
+    "translates": [
       "проламывать",
       "разбивать"
     ]
@@ -2947,7 +2953,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "steal",
     "second": "stole",
     "third": "stolen",
-    "translate": [
+    "translates": [
       "воровать",
       "красть"
     ]
@@ -2956,7 +2962,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "stick",
     "second": "stuck",
     "third": "stuck",
-    "translate": [
+    "translates": [
       "втыкать",
       "колоть",
       "приклеивать",
@@ -2967,7 +2973,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "sting",
     "second": "stung",
     "third": "stung",
-    "translate": [
+    "translates": [
       "жалить",
       "причинять боль",
       "обманывать"
@@ -2977,7 +2983,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "stink",
     "second": "stunk / stank",
     "third": "stunk",
-    "translate": [
+    "translates": [
       "вонять",
       "пахнуть"
     ]
@@ -2986,7 +2992,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "strew",
     "second": "strewed",
     "third": "strewn / strewed",
-    "translate": [
+    "translates": [
       "усеять",
       "разбрасывать",
       "посыпать"
@@ -2996,7 +3002,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "stride",
     "second": "strode",
     "third": "stridden",
-    "translate": [
+    "translates": [
       "шагать",
       "сидеть верхом"
     ]
@@ -3005,7 +3011,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "strike",
     "second": "struck",
     "third": "struck / stricken",
-    "translate": [
+    "translates": [
       "ударять",
       "поражать",
       "бастовать"
@@ -3015,7 +3021,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "string",
     "second": "strung",
     "third": "strung",
-    "translate": [
+    "translates": [
       "связывать",
       "натягивать",
       "нанизывать"
@@ -3025,7 +3031,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "strive",
     "second": "strove / strived",
     "third": "striven / strived",
-    "translate": [
+    "translates": [
       "стремиться",
       "стараться",
       "пытаться"
@@ -3035,7 +3041,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "sublet",
     "second": "sublet",
     "third": "sublet",
-    "translate": [
+    "translates": [
       "сдавать в подна",
       "м"
     ]
@@ -3044,7 +3050,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "sunburn",
     "second": "sunburned / sunburnt",
     "third": "sunburned / sunburnt",
-    "translate": [
+    "translates": [
       "обгорать на солнце"
     ]
   },
@@ -3052,7 +3058,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "swear",
     "second": "swore",
     "third": "sworn",
-    "translate": [
+    "translates": [
       "клясться",
       "присягать",
       "ругаться"
@@ -3062,7 +3068,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "sweat",
     "second": "sweat / sweated",
     "third": "sweat / sweated",
-    "translate": [
+    "translates": [
       "потеть",
       "сыреть",
       "запотевать"
@@ -3072,7 +3078,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "sweep",
     "second": "swept",
     "third": "swept",
-    "translate": [
+    "translates": [
       "мести",
       "прочищать",
       "сметать",
@@ -3083,7 +3089,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "swell",
     "second": "swelled",
     "third": "swollen / swelled",
-    "translate": [
+    "translates": [
       "пухнуть",
       "раздуваться",
       "набухать"
@@ -3093,7 +3099,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "swim",
     "second": "swam",
     "third": "swum",
-    "translate": [
+    "translates": [
       "плавать",
       "плыть"
     ]
@@ -3102,7 +3108,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "swing",
     "second": "swung",
     "third": "swung",
-    "translate": [
+    "translates": [
       "качать",
       "размахивать"
     ]
@@ -3111,7 +3117,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "take",
     "second": "took",
     "third": "taken",
-    "translate": [
+    "translates": [
       "брать",
       "взять"
     ]
@@ -3120,7 +3126,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "teach",
     "second": "taught",
     "third": "taught",
-    "translate": [
+    "translates": [
       "обучать",
       "учить"
     ]
@@ -3129,7 +3135,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "tear",
     "second": "tore",
     "third": "torn",
-    "translate": [
+    "translates": [
       "рвать",
       "сорвать",
       "разорвать"
@@ -3139,7 +3145,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "telecast",
     "second": "telecast",
     "third": "telecast",
-    "translate": [
+    "translates": [
       "передавать по телевидению"
     ]
   },
@@ -3147,7 +3153,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "tell",
     "second": "told",
     "third": "told",
-    "translate": [
+    "translates": [
       "говорить",
       "рассказывать",
       "сообщать"
@@ -3157,7 +3163,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "test-drive",
     "second": "test-drove",
     "third": "test-driven",
-    "translate": [
+    "translates": [
       "делать пробную поездку",
       "тестировать"
     ]
@@ -3166,7 +3172,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "test-fly",
     "second": "test-flew",
     "third": "test-flown",
-    "translate": [
+    "translates": [
       "испытывать самолет в воздухе"
     ]
   },
@@ -3174,7 +3180,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "think",
     "second": "thought",
     "third": "thought",
-    "translate": [
+    "translates": [
       "думать",
       "полагать"
     ]
@@ -3183,7 +3189,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "thrive",
     "second": "throve / thrived",
     "third": "thrived / thriven",
-    "translate": [
+    "translates": [
       "процветать",
       "преуспевать",
       "буйно расти"
@@ -3193,7 +3199,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "throw",
     "second": "threw",
     "third": "thrown",
-    "translate": [
+    "translates": [
       "кидать",
       "бросать"
     ]
@@ -3202,7 +3208,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "thrust",
     "second": "thrust",
     "third": "thrust",
-    "translate": [
+    "translates": [
       "колоть",
       "засовывать",
       "толкать",
@@ -3213,7 +3219,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "tread",
     "second": "trod",
     "third": "trodden / trod",
-    "translate": [
+    "translates": [
       "идти",
       "ступать",
       "топтать",
@@ -3224,7 +3230,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "typecast",
     "second": "typecast",
     "third": "typecast",
-    "translate": [
+    "translates": [
       "подбирать актеров по типажности"
     ]
   },
@@ -3232,7 +3238,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "typeset",
     "second": "typeset",
     "third": "typeset",
-    "translate": [
+    "translates": [
       "набирать текст для печати",
       "определять тип"
     ]
@@ -3241,7 +3247,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "typewrite",
     "second": "typewrote",
     "third": "typewritten",
-    "translate": [
+    "translates": [
       "печатать на пишущей машинке",
       "набирать текст"
     ]
@@ -3250,7 +3256,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "unbend",
     "second": "unbent",
     "third": "unbent",
-    "translate": [
+    "translates": [
       "разгибаться",
       "выпрямляться",
       "смягчаться"
@@ -3260,7 +3266,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "unbind",
     "second": "unbound",
     "third": "unbound",
-    "translate": [
+    "translates": [
       "развязать",
       "распуска",
       "ослаблять"
@@ -3270,7 +3276,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "unclothe",
     "second": "unclothed / unclad",
     "third": "unclothed / unclad",
-    "translate": [
+    "translates": [
       "раздеваться",
       "раздевать",
       "обнажать"
@@ -3280,7 +3286,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "underbid",
     "second": "underbid",
     "third": "underbid",
-    "translate": [
+    "translates": [
       "перебивать цену",
       "назначать более низкую цену"
     ]
@@ -3289,7 +3295,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "undercut",
     "second": "undercut",
     "third": "undercut",
-    "translate": [
+    "translates": [
       "подрезать",
       "сбивать цены",
       "делать подсечку"
@@ -3299,7 +3305,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "underfeed",
     "second": "underfed",
     "third": "underfed",
-    "translate": [
+    "translates": [
       "недокармливать",
       "недоедать"
     ]
@@ -3308,7 +3314,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "undergo",
     "second": "underwent",
     "third": "undergone",
-    "translate": [
+    "translates": [
       "испытывать",
       "переносить"
     ]
@@ -3317,7 +3323,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "underlie",
     "second": "underlay",
     "third": "underlain",
-    "translate": [
+    "translates": [
       "подчеркивать",
       "выделять"
     ]
@@ -3326,7 +3332,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "undersell",
     "second": "undersold",
     "third": "undersold",
-    "translate": [
+    "translates": [
       "продавать дешевле других"
     ]
   },
@@ -3334,7 +3340,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "underspend",
     "second": "underspent",
     "third": "underspent",
-    "translate": [
+    "translates": [
       "тратить недостаточно",
       "очень мало"
     ]
@@ -3343,7 +3349,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "understand",
     "second": "understood",
     "third": "understood",
-    "translate": [
+    "translates": [
       "понимать",
       "осознавать"
     ]
@@ -3352,7 +3358,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "undertake",
     "second": "undertook",
     "third": "undertaken",
-    "translate": [
+    "translates": [
       "предпринимать",
       "гарантировать",
       "совершать"
@@ -3362,7 +3368,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "underwrite",
     "second": "underwrote",
     "third": "underwritten",
-    "translate": [
+    "translates": [
       "подписывать",
       "гарантировать",
       "ручаться"
@@ -3372,7 +3378,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "undo",
     "second": "undid",
     "third": "undone",
-    "translate": [
+    "translates": [
       "расстегивать",
       "уничтожать",
       "отменять",
@@ -3383,7 +3389,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "unfreeze",
     "second": "unfroze",
     "third": "unfrozen",
-    "translate": [
+    "translates": [
       "разморозить",
       "размораживаться"
     ]
@@ -3392,7 +3398,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "unhang",
     "second": "unhung",
     "third": "unhung",
-    "translate": [
+    "translates": [
       "снимать (висящее)"
     ]
   },
@@ -3400,7 +3406,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "unhide",
     "second": "unhid",
     "third": "unhidden",
-    "translate": [
+    "translates": [
       "показывать скрытые элементы"
     ]
   },
@@ -3408,7 +3414,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "unknit",
     "second": "unknitted / unknit",
     "third": "unknitted / unknit",
-    "translate": [
+    "translates": [
       "распускать (вязанье)",
       "распутывать",
       "разъединять"
@@ -3418,7 +3424,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "unlearn",
     "second": "unlearned / unlearnt",
     "third": "unlearned / unlearnt",
-    "translate": [
+    "translates": [
       "разучиться",
       "забыть то",
       "что знал"
@@ -3428,7 +3434,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "unsew",
     "second": "unsewed",
     "third": "unsewn / unsewed",
-    "translate": [
+    "translates": [
       "распарывать сшитое"
     ]
   },
@@ -3436,7 +3442,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "unsling",
     "second": "unslung",
     "third": "unslung",
-    "translate": [
+    "translates": [
       "отвязывать",
       "снимать",
       "осовобождать от ремня"
@@ -3446,7 +3452,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "unspin",
     "second": "unspun",
     "third": "unspun",
-    "translate": [
+    "translates": [
       "распускать",
       "расплетать",
       "распутывать"
@@ -3456,7 +3462,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "unstick",
     "second": "unstuck",
     "third": "unstuck",
-    "translate": [
+    "translates": [
       "отдирать",
       "отклеивать",
       "взлетать (самолет)"
@@ -3466,7 +3472,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "unstring",
     "second": "unstrung",
     "third": "unstrung",
-    "translate": [
+    "translates": [
       "снимать",
       "ослаблять",
       "распускать",
@@ -3477,7 +3483,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "unweave",
     "second": "unwove / unweaved",
     "third": "unwoven / unweaved",
-    "translate": [
+    "translates": [
       "распускать",
       "расплетать (ткань)"
     ]
@@ -3486,7 +3492,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "unwind",
     "second": "unwound",
     "third": "unwound",
-    "translate": [
+    "translates": [
       "расматывать",
       "раскручивать",
       "развивать"
@@ -3496,7 +3502,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "uphold",
     "second": "upheld",
     "third": "upheld",
-    "translate": [
+    "translates": [
       "поддерживать",
       "помогать",
       "удерживать"
@@ -3506,7 +3512,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "upset",
     "second": "upset",
     "third": "upset",
-    "translate": [
+    "translates": [
       "опрокидывать",
       "расстраивать",
       "огорчать"
@@ -3516,7 +3522,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "wake",
     "second": "woke / waked",
     "third": "woken / waked",
-    "translate": [
+    "translates": [
       "будить",
       "просыпаться"
     ]
@@ -3525,7 +3531,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "waylay",
     "second": "waylaid",
     "third": "waylaid",
-    "translate": [
+    "translates": [
       "подстерегать",
       "устраивать засаду"
     ]
@@ -3534,7 +3540,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "wear",
     "second": "wore",
     "third": "worn",
-    "translate": [
+    "translates": [
       "носить (одежду)"
     ]
   },
@@ -3542,7 +3548,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "weave",
     "second": "wove / weaved",
     "third": "woven / weaved",
-    "translate": [
+    "translates": [
       "ткать",
       "плести"
     ]
@@ -3551,7 +3557,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "wed",
     "second": "wed / wedded",
     "third": "wed / wedded",
-    "translate": [
+    "translates": [
       "венчать",
       "выдавать замуж",
       "жениться",
@@ -3562,7 +3568,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "weep",
     "second": "wept",
     "third": "wept",
-    "translate": [
+    "translates": [
       "плакать",
       "тосковать",
       "запотевать"
@@ -3572,7 +3578,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "wet",
     "second": "wet / wetted",
     "third": "wet / wetted",
-    "translate": [
+    "translates": [
       "мочить",
       "промочить",
       "мокнуть"
@@ -3582,7 +3588,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "win",
     "second": "won",
     "third": "won",
-    "translate": [
+    "translates": [
       "выигрывать",
       "побеждать"
     ]
@@ -3591,7 +3597,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "wind",
     "second": "wound",
     "third": "wound",
-    "translate": [
+    "translates": [
       "чуять",
       "дуть",
       "наматывать",
@@ -3603,7 +3609,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "withdraw",
     "second": "withdrew",
     "third": "withdrawn",
-    "translate": [
+    "translates": [
       "брать назад",
       "отнимать",
       "отзывать",
@@ -3614,7 +3620,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "withhold",
     "second": "withheld",
     "third": "withheld",
-    "translate": [
+    "translates": [
       "воздерживаться",
       "удерживать",
       "скрывать"
@@ -3624,7 +3630,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "withstand",
     "second": "withstood",
     "third": "withstood",
-    "translate": [
+    "translates": [
       "устоять",
       "выдерживать",
       "сопротивляться"
@@ -3634,7 +3640,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "wring",
     "second": "wrung",
     "third": "wrung",
-    "translate": [
+    "translates": [
       "крутить",
       "терзать",
       "выжимать",
@@ -3645,7 +3651,7 @@ export const irregularVerbs  = JSON.parse(`[
     "first": "write",
     "second": "wrote",
     "third": "written",
-    "translate": [
+    "translates": [
       "писать"
     ]
   }

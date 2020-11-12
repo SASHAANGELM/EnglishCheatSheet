@@ -12,6 +12,12 @@ const store = new Vuex.Store({
     auth: {
       isLoaded: false,
       user: null
+    },
+
+    vocabulary: {
+      verbs: {
+        irregular: []
+      }
     }
   },
   mutations: {

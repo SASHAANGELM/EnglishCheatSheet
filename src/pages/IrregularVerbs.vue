@@ -8,7 +8,10 @@
       <vs-button @click="randomizeVerb">Randomize verb</vs-button>
 
 
-      <table class="w-full">
+      <input v-model="search" type="text">
+      <IrregularVerbRow v-for="verb in filteredVerbs" :key="verb.id" :irregularVerb="verb"></IrregularVerbRow>
+
+      <!-- <table class="w-full">
         <thead>
           <tr>
             <td>First</td>
@@ -29,7 +32,7 @@
             </td>
           </tr>
         </tbody>
-      </table>
+      </table> -->
     </div>
   </div>
 </template>
@@ -39,7 +42,7 @@ import { id } from '../utils/id';
 import { irregularVerbs } from '../services/verbs';
 
 import IrregularVerbRow from '../components/IrregularVerbRow';
-console.log('irregularVerbs', irregularVerbs);
+// console.log('irregularVerbs', irregularVerbs);
 
 export default {
   components: {
@@ -47,28 +50,44 @@ export default {
   },
   data() {
     return {
-      irregularVerbs,
+      search: '',
+      verbs: [],
       randomVerb: null
     };
   },
   computed: {
-    verbs() {
-      return irregularVerbs.map(item => {
-        item.id = id();
-        return item;
-        })
+    filteredVerbs() {
+      const s = this.search;
+      // console.log('!s', !s)
+      if (!s) {
+        return this.verbs;
+      }
+
+      return this.verbs.filter(verb => {
+        const translate = verb.translate.some((translate) => translate.includes(s));
+
+        return verb.first.includes(s) ||
+               verb.second.includes(s) ||
+               verb.third.includes(s) ||
+               translate;
+      });
     }
   },
   watch: {
 
   },
   created() {
+    this.verbs = irregularVerbs.map(item => {
+      item.id = id();
+      return item;
+    });
+
     this.randomizeVerb();
   },
   methods: {
     randomizeVerb() {
       const randomIndex = Math.floor(Math.random() * this.verbs.length);
-      console.log('randomIndex', randomIndex)
+      // console.log('randomIndex', randomIndex)
       this.randomVerb = this.verbs[randomIndex];
     }
   }

@@ -1,3 +1,3 @@
 <template>
-  <router-view class="page min-h-screen" />
+  <router-view class="min-h-screen" />
 </template>
