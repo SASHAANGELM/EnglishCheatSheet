@@ -1,8 +1,35 @@
 export function getVerbByFirstForm(firstForm) {
-  return irregularVerbs.find(verb => {
+  const found = irregularVerbs.find(verb => {
     return verb.first.toLowerCase() === firstForm.toLowerCase();
-  })
+  });
+  if (found) {
+    return found
+  } else {
+    return regularVerbs.find(verb => {
+      return verb.first.toLowerCase() === firstForm.toLowerCase();
+    })
+  }
 }
+
+const regularVerbs = [
+  {
+    first: 'plan',
+    second: 'planned',
+    third: 'planned',
+    translates: [
+      'планувати'
+    ]
+  },
+  {
+    first: 'start',
+    second: 'started',
+    third: 'started',
+    translates: [
+      'почати',
+      'починати'
+    ]
+  }
+]
 
 export const irregularVerbs  = JSON.parse(`[
   {
@@ -3042,8 +3069,7 @@ export const irregularVerbs  = JSON.parse(`[
     "second": "sublet",
     "third": "sublet",
     "translates": [
-      "сдавать в подна",
-      "м"
+      "передавати в суборенду"
     ]
   },
   {

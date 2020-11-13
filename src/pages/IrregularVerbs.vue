@@ -17,7 +17,7 @@
             <td>First</td>
             <td>Second</td>
             <td>Third</td>
-            <td>Translate</td>
+            <td>translates</td>
           </tr>
         </thead>
         <tbody>
@@ -27,7 +27,7 @@
             <td>{{ verb.third }}</td>
             <td>
               <div class="py-2 text-xs leading-none">
-                <div v-for="translate in verb.translate">{{ translate }}</div>
+                <div v-for="translate in verb.translates">{{ translate }}</div>
               </div>
             </td>
           </tr>
@@ -64,7 +64,7 @@ export default {
       }
 
       return this.verbs.filter(verb => {
-        const translate = verb.translate.some((translate) => translate.includes(s));
+        const translate = verb.translates.some((translate) => translate.includes(s));
 
         return verb.first.includes(s) ||
                verb.second.includes(s) ||

@@ -24,6 +24,16 @@ export default {
         },
         {
           id: id(),
+          label: 'Exercises',
+          to: '/exercises'
+        },
+        {
+          id: id(),
+          label: 'Irregular Verbs',
+          to: '/irregular-verbs'
+        },
+        {
+          id: id(),
           label: 'Tenses',
           to: '/tenses'
         },
@@ -31,16 +41,6 @@ export default {
           id: id(),
           label: 'Conditions',
           to: '/conditions'
-        },
-        {
-          id: id(),
-          label: 'IrregularVerbs',
-          to: '/irregular-verbs'
-        },
-        {
-          id: id(),
-          label: 'Exercises',
-          to: '/exercises'
         }
       ]
     };

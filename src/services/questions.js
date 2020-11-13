@@ -48,7 +48,15 @@ function getOrGenerateSubject(string) {
   const subjectGetterReg = new RegExp('(?<=\\[SUBJECT.)[\\w]+(?=\\])', 'g');
   if (subjectGetterReg.test(string)) {
     const subjectKey = string.match(subjectGetterReg)[0];
-    return getSubject(subjectKey);
+    const subject = getSubject(subjectKey);
+    if (subject) {
+      return subject;
+    } else {
+      return {
+        subject: subjectKey,
+        person: 3
+      }
+    }
   } else {
     return randomInArray(pronouns);
   }
@@ -73,13 +81,15 @@ function getPostfix(string) {
   return string;
 }
 
-function questionGenerator(question, subject, verb) {
+function questionGenerator(question) {
+  const { subject, verb } = question;
   const postfix = getPostfix(question.question);
   const string =  `${subject.subject} (${verb.first}) ${postfix}`;
   return capitalize(string);
 }
 
-function answerGenerator(question, subject, verb) {
+function answerGenerator(question) {
+  const { subject, verb } = question;
   let answers = [];
   const postfix = getPostfix(question.question);
   console.log('postfix', postfix);
@@ -132,88 +142,105 @@ const sentencesType = ['positive', 'negative', 'question'];
 
 const questions = [
   {
-    question: '[SUBJECT] [VERB.buy] a new lamp',
-    answers: {
-      perfect: {
-        past: {
-          positive: [
-            `I had worked`
-          ],
-          negative: [
-            `I had not worked`,
-            `I hadn't worked`
-          ],
-          question: [
-            `Had I worked?`
-          ]
-        },
-        present: {
-          positive: [
-            `I have worked`
-          ],
-          negative: [
-            `I have not worked`,
-            `I haven't worked`
-          ],
-          question: [
-            `Have I worked?`
-          ]
-        },
-        future: {
-          positive: [
-            `I will have worked`
-          ],
-          negative: [
-            `I will have not worked`,
-            `I will haven't worked`
-          ],
-          question: [
-            `Will I have worked?`
-          ]
-        }
-      }
-    }
-  },
-  {
-    question: '[SUBJECT.he] [VERB.write] five letters',
-    answers: {
-      perfect: {
-        past: {
-          positive: '',
-          negative: '',
-          question: ''
-        },
-        present: {
-          positive: '',
-          negative: '',
-          question: ''
-        },
-        future: {
-          positive: '',
-          negative: '',
-          question: ''
-        }
-      }
-    }
-  },
-  {
     question: '[SUBJECT] [VERB] today',
     answers: {
       perfect: {
-        past: {
-          positive: '',
-          negative: '',
-          question: ''
-        },
+        present: true,
+        future: true
+      }
+    }
+  },
+  {
+    question: '[SUBJECT] [VERB.buy] a new lamp',
+    answers: {
+      perfect: {
+        past: true,
+        present: true,
+        future: true
+      }
+    }
+  },
+  {
+    question: '[SUBJECT] [VERB.write] five letters',
+    answers: {
+      perfect: {
+        past: true,
+        present: true,
+        future: true
+      }
+    }
+  },
+  {
+    question: '[SUBJECT] [VERB.plan] our holiday yet',
+    answers: {
+      perfect: {
         present: {
-          positive: '',
-          negative: '',
-          question: ''
+          negative: true,
+          question: true
         },
         future: {
-          positive: '',
-          negative: '',
-          question: ''
+          negative: true,
+          question: true
+        }
+      }
+    }
+  },
+  {
+    question: '[SUBJECT] [VERB.see] him for a long time',
+    answers: {
+      perfect: {
+        past: true,
+        present: true,
+        future: true
+      }
+    }
+  },
+  {
+    question: '[SUBJECT] [VERB.be] at school',
+    answers: {
+      perfect: {
+        past: true,
+        present: true,
+        future: true
+      }
+    }
+  },
+  {
+    question: '[SUBJECT.school] [VERB.start] yet',
+    answers: {
+      perfect: {
+        present: {
+          negative: true,
+          question: true
+        },
+        future: {
+          negative: true,
+          question: true
+        }
+      }
+    }
+  },
+  {
+    question: '[SUBJECT] [VERB.speak] to his boss',
+    answers: {
+      perfect: {
+        past: true,
+        present: true,
+        future: true
+      }
+    }
+  },
+  {
+    question: '[SUBJECT] [VERB.have] the time yet',
+    answers: {
+      perfect: {
+        present: {
+          negative: true,
+          question: true
+        },
+        future: {
+          negative: true,
+          question: true
         }
       }
     }
@@ -226,22 +253,32 @@ export function randomInArray(array) {
 }
 
 function questionGen() {
-  const randomTensType = randomInArray(tensType);
-  const randomTensTimes = randomInArray(tensTimes);
-  const randomSentencesType = randomInArray(sentencesType);
   const randomQuestion = randomInArray(questions);
+  const tens = randomInArray(tensType);
+  const time = randomInArray(tensTimes);
+  const type = randomInArray(sentencesType);
   
   if (
-    randomTensType in randomQuestion.answers &&
-    randomTensTimes in randomQuestion.answers[randomTensType] &&
-    randomSentencesType in randomQuestion.answers[randomTensType][randomTensTimes]
+    tens in randomQuestion.answers &&
+    time in randomQuestion.answers[tens] &&
+    (
+      (
+        typeof randomQuestion.answers[tens][time] === 'object' &&
+        type in randomQuestion.answers[tens][time] &&
+        randomQuestion.answers[tens][time][type]
+      ) || 
+      (
+        typeof randomQuestion.answers[tens][time] === 'boolean' &&
+        randomQuestion.answers[tens][time]
+      )
+    )
   ) {
     return {
-      tens: randomTensType,
-      time: randomTensTimes,
-      type: randomSentencesType,
+      tens,
+      time,
+      type: type,
       question: randomQuestion.question,
-      answers: randomQuestion.answers[randomTensType][randomTensTimes][randomSentencesType]
+      answers: randomQuestion.answers[tens][time][type]
     };
   } else {
     return questionGen()
@@ -253,22 +290,13 @@ export function generateQuestion() {
   const verb = getOrGenerateVerb(question.question);
   const subject = getOrGenerateSubject(question.question);
 
-  const string = questionGenerator(question, subject, verb);
-  const answers = answerGenerator(question, subject, verb);
+  question.verb = verb;
+  question.subject = subject;
+
+  const string = questionGenerator(question);
+  const answers = answerGenerator(question);
   question.question = string;
   question.answers = answers;
 
   return question;
 }
-
-
-'I have worked today.'
-'We have bought a new lamp.'
-'We have not planned our holiday yet.'
-'Where have you been ?'
-'He has written five letters.'
-'She has not seen him for a long time.'
-'Have you been at school?'
-'School has not started yet.'
-'Has he spoken to his boss?'
-'No, he has not had the time yet.'

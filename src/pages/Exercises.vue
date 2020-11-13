@@ -2,49 +2,68 @@
   <div class="flex flex-col py-8 space-y-8 bg-gradient-to-r from-teal-400 to-blue-500">
     <div class="flex-1 container mx-auto h-full bg-gray-100 rounded-lg">
       <div class="p-4">
+        <div>
+          <vs-button to="/">Back</vs-button>
+        </div>
         <div class="flex space-x-2">
           <div :class="question.time" class="tag">{{ question.time }} Perfect Tens</div>
           <div :class="question.type" class="tag">{{ question.type }} Sentence</div>
         </div>
         <div class="mt-4 text-xl">
-          <div>{{ question.question }}</div>
-          <!-- <div>{{ question.answers }}</div> -->
+          <div @click="showVerb = !showVerb">{{ question.question }}</div>
+          <IrregularVerbRow v-if="showVerb" :irregularVerb="question.verb"></IrregularVerbRow>
         </div>
       </div>
     </div>
-    <div class="flex-1 container mx-auto h-full p-4  bg-gray-100 rounded-lg">
-      <div class="flex">
-        <input v-model="answer" type="text" class="w-full border border-gray-500 text-xl" @keyup.enter="enter">
-        <vs-button @click="check">Check</vs-button>
-      </div>
-      <div v-if="checked" class="flex justify-center">
-        <div>
-          <div v-if="checkResult">
-            <div class="result correct">Correct</div>
+    <div class="flex-1 flex flex-col container mx-auto h-full p-4  bg-gray-100 rounded-lg">
+      <div class="flex-1">
+        <div class="flex">
+          <input v-model="answer" type="text" class="w-full border border-gray-500 text-xl" @keyup.enter="enter">
+          <vs-button @click="check">Check</vs-button>
+        </div>
+        <div v-if="checked" class="flex justify-center">
+          <div>
+            <div v-if="checkResult">
+              <div class="result correct">Correct</div>
+            </div>
+          </div>
+          
+          <div v-if="!checkResult">
+            <div class="flex">
+              <div class="result wrong">Wrong</div>
+              <vs-button @click="showAnswer = !showAnswer">Show Answer</vs-button>
+            </div>
+            <div v-if="showAnswer">
+              <div class="">correct answer:</div>
+              <div>{{ question.answers[0] }}</div>
+            </div>
           </div>
         </div>
-        
-        <div v-if="!checkResult">
-          <div class="result wrong">Wrong</div>
-          correct answer: {{ question.answers[0] }}
-        </div>
       </div>
-      <vs-button @click="next">Next question</vs-button>
+      <div>
+        <vs-button @click="next">Next question</vs-button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-
 import { generateQuestion } from '../services/questions';
+
+import IrregularVerbRow from '../components/IrregularVerbRow';
 
 const TYPES = {
   VERBS: 'VERBS'
 }
 
 export default {
+  components: {
+    IrregularVerbRow
+  },
   data() {
     return {
+      showVerb: false,
+      showAnswer: false,
       answer: '',
       question: generateQuestion(),
       checked: false,
@@ -53,7 +72,7 @@ export default {
   },
   methods: {
     enter() {
-      if (this.checked) {
+      if (this.checked && this.checkResult) {
         this.next();
       } else {
         this.check();
@@ -85,7 +104,7 @@ export default {
 .tag {
   padding: 2px 4px;
   border-radius: 4px;
-  font-size: 12px;
+  // font-size: 12px;
   text-transform: capitalize;
 
   &.past, &.question {

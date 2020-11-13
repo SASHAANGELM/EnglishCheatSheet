@@ -4,7 +4,7 @@
     <div class="w-1/6 text-orange-500">{{ irregularVerb.second }}</div>
     <div class="w-1/6 text-red-500">{{ irregularVerb.third }}</div>
     <div class="w-3/6 py-2 text-xs leading-none">
-      <span v-for="(translate, translateIndex) in irregularVerb.translate">
+      <span v-for="(translate, translateIndex) in irregularVerb.translates">
         <span v-if="translateIndex > 0">, </span>
         <span>{{ translate }}</span>
       </span>
