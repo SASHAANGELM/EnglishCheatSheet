@@ -120,8 +120,9 @@ function answerGenerator(question) {
       if (type === 'positive') {
         answers.push(`${subject.subject} will have ${verb.third} ${postfix}`);
       } else if (type === 'negative') {
-        answers.push(`${subject.subject} will have not ${verb.third} ${postfix}`);
-        answers.push(`${subject.subject} will haven't ${verb.third} ${postfix}`);
+        answers.push(`${subject.subject} will not have ${verb.third} ${postfix}`);
+        answers.push(`${subject.subject} won't have ${verb.third} ${postfix}`);
+        answers.push(`${subject.subject}'ll not have ${verb.third} ${postfix}`);
       } else if (type === 'question') {
         answers.push(`Will ${subject.subject} have ${verb.third} ${postfix}?`);
       }
